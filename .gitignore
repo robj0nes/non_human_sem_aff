@@ -1,0 +1,8 @@
+*.DS_Store
+*.egg*
+
+*.pt
+*.pkl
+/GroundingDINO
+/datasets
+keys.json

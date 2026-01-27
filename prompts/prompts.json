@@ -1,0 +1,30 @@
+{
+  "system": {
+    "robot_prefix": "I am a cylindrical robot with dimensions 0.3m diameter and 0.5m height. I can move around the world in two dimensions",
+    "robots": {
+      "humanoid": "I am a humanoid robot, I have two arms and two legs, and have the same capabilities as a human.",
+      "scooper": "I have a mechanism which allows me to scoop objects from the ground if the object weighs less than 1 kilogram and is no wider than 0.3m.",
+      "lifter": "I have a mechanism which allows me to lift objects vertically upwards as long as I can get underneath them.",
+      "collector": "I have a mechanism which allows me to collect items off the ground by capturing them between two bars directed at 45 degrees to my direction of travel.",
+      "pusher": "I have a mechanism which allows me to push objects larger and heavier than myself in a forwards direction.",
+      "picker": "I have an arm attachment on top of me which allows me to pick up objects as long as they weigh less then 2kgs.",
+      "cutter": "I have a mechanism which allows me to cut objects made of paper, plastic or wood."
+    },
+    "tasks": {
+      "construction": "I am working in a construction site, and tasked with supporting the human workers by handling the building materials around my environment.",
+      "household_items": "I am working in a residential home and tasked with cleaning and tidying the space.",
+      "litter": "I am working in an office environment and tasked with cleaning and tidying the space.",
+      "search_and_rescue": "I am a search and rescue robot operating in a test scenario where I am tasked with clearing obstacles which have trapped the stuffed penguin."
+    },
+    "vlm_prefix": "You will be presented with one or more images. Your objective is to identify objects in each image and provide a response of my task-relevant affordances with each item. Only provide affordances you are confident of given my physical description and my task, otherwise provide None. \n",
+    "lm_prefix": "You will be provided a list of objects I have encountered in my environment. Your task is to provide a response of my affordances with each item. Only provide affordances you are confident of given my physical description, otherwise provide None. \n"
+  },
+  "user": {
+    "vlm_prompts": {
+      "basic": "Please respond according to your instructions."
+    },
+    "lm_prompts": {
+      "basic": "Only provide affordances for objects I have provided. If I have provided am empty list, return None."
+    }
+  }
+}

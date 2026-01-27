@@ -1,0 +1,19 @@
+[build-system]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "affordance_mapping"
+version = "0.1.0"
+description = "A project for affordance mapping"
+readme = "README.md"
+authors = [
+    {name = "Rob Jones", email = "rob.jones.2020@bristol.ac.uk"}
+]
+keywords = ["robotics", "affordance", "mapping"]
+
+[tool.pip-requirements]
+file = "requirements.txt"
+
+[tool.setuptools.packages.find]
+where = ["src"]

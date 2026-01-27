@@ -1,0 +1,171 @@
+paths:
+  # The root directory to save to. If null, defaults to the project root.
+  save_root: null
+  # Relative to the script location
+  grounding_dino_config: "GroundingDINO/groundingdino/config/GroundingDINO_SwinT_OGC.py"
+  grounding_dino_weights: "GroundingDINO/weights/groundingdino_swint_ogc.pth"
+
+experiment:
+  # Options: all, real, synthetic
+  data_type: "all"
+  # Options: veo, gpt
+  synth_source: "veo"
+  # Date the real data was caputured: YYYYMMDD
+  capture_date: "20250318"
+  # Date the experiments were recorded: YYYYMMDD
+  experiment_date: "20260119"
+
+settings:
+  overwrite_evals: false
+  debug_mode: false
+  similarity_threshold: 0.45
+  plot_metrics: ['accuracy', 'f1']
+
+models:
+  sentence_transformer: "all-MiniLM-L6-v2"
+  grounding_dino:
+    box_threshold: 0.35
+    text_threshold: 0.25
+
+tasks:
+  real_world:
+    - name: "construction"
+      runs: ["distributed", "piled"]
+    - name: "household_items"
+      runs: ["run1", "run2", "run3"]
+    - name: "litter"
+      runs: ["distributed", "piled"]
+    - name: "search_and_rescue"
+      runs: ["trapped_penguin"]
+
+# Data Cleaning and Clustering Mappings
+mappings:
+  cuttable_objects:
+    - 'Ball'
+    - 'Baseball Bat'
+    - 'Bucket'
+    - 'Football'
+    - 'Pencil'
+    - 'Picture Frame'
+    - 'Plastic Bag'
+    - 'Rubber Duck'
+    - 'Table Tennis Bat'
+
+  object_renames:
+    'Wires': 'Wire'
+    'Books': 'Book'
+    'Stuffed Toy': 'Toy'
+    'Stuffed Toy\': 'Toy'
+    'Toy Car': 'Toy'
+    'Baskey Ball': 'Basket Ball'
+    'Pebbles': "Pebble"
+    'Rubgy Ball': 'Rugby Ball'
+    'Salmpon': 'Salmon'
+
+  affordance_renames:
+    'Grasp': 'Pick'
+    'Capture': 'Collect'
+    'Grasp or Pick': 'Pick'
+
+  clusters:
+    Food:
+      - 'Apple'
+      - 'Avocado'
+      - 'Banana'
+      - 'Grape'
+      - 'Lemon'
+      - 'Orange'
+      - 'Muffin'
+      - 'Peach'
+      - 'Strawberry'
+      - 'Broccoli'
+      - 'Bread'
+      - 'Bagel'
+      - 'Burger'
+      - 'Cookie'
+      - 'Croissant'
+      - 'Cupcake'
+      - 'Fried Egg'
+      - 'Pizza'
+      - 'Chicken'
+      - 'Salmon'
+      - 'Toastie'
+    Litter:
+      - 'Foil Wrapper'
+      - 'Paper Bag'
+      - 'Plastic Lid'
+      - 'Plastic Bottle'
+      - 'Tin Can'
+      - 'Cigarette'
+      - 'Paper Cup'
+      - 'Tissue'
+      - 'Styrofoam Box'
+      - 'Plastic Bag'
+      - 'Plastic Cup'
+      - 'Can'
+      - 'Newspaper'
+      - 'Cardboard'
+      - 'Paper'
+      - 'Foil'
+    "Sports\n Equipment":
+      - 'Football'
+      - 'Ball'
+      - 'Basket Ball'
+      - 'Golf Ball'
+      - 'Rugby Ball'
+      - 'Baseball Bat'
+      - 'Shuttle Cock'
+      - 'Tennis Ball'
+      - 'Baseball'
+      - 'Table Tennis Bat'
+      - 'Hockey Puc'
+    "Household\n Items":
+      - 'Bag'
+      - 'Blanket'
+      - 'Book'
+      - 'Chair'
+      - 'Candle'
+      - 'Coin'
+      - 'Cloth'
+      - 'Cup'
+      - 'Mug'
+      - 'Cushion'
+      - 'Key'
+      - 'Pot'
+      - 'Pencil'
+      - 'Rubber Duck'
+      - 'Shoes'
+      - 'Shoe'
+      - 'Sock'
+      - 'Toy'
+      - 'Radio'
+      - 'Parcel'
+      - 'Whisk'
+      - 'Bin'
+      - 'Picture Frame'
+      - 'Tongs'
+      - 'Plastic Spoon'
+      - 'Glass'
+      - 'Package'
+    "Construction\n Items":
+      - 'Brick'
+      - 'Bucket'
+      - 'Concrete'
+      - 'Concrete Block'
+      - 'Concrete Brick'
+      - 'Metal Pipe'
+      - 'Metal Rod'
+      - 'Paint Pot'
+      - 'Pebble'
+      - 'Plastic Pipe'
+      - 'Rods'
+      - 'Sandbag'
+      - 'Screwdriver'
+      - 'Stone'
+      - 'Wire'
+      - 'Cardboard Box'
+      - 'Wood'
+      - 'Pipe'
+      - 'Tube'
+      - 'Rocks'
+      - 'Glass Pane'

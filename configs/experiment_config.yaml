@@ -1,0 +1,66 @@
+paths:
+  # Relative to the script location
+  grounding_dino_config: "GroundingDINO/groundingdino/config/GroundingDINO_SwinT_OGC.py"
+  grounding_dino_weights: "GroundingDINO/weights/groundingdino_swint_ogc.pth"
+  # The root directory to save to. If null, defaults to the project root.
+  save_root: null
+  # The location of the hugging face model cache.
+  hf_home: null
+
+media:
+  date: '20250318'
+  source_material:
+#     - "synthetic"
+    - "real"
+  synth_source:
+#    - "gpt"
+     - "veo"
+  tasks:
+    - 'litter'
+    - 'construction'
+    - 'household_items'
+    - 'search_and_rescue'
+  runs:
+    - 'all'
+    # - 'run1'
+    # - 'piled'
+#     - 'distributed'
+  cam: 'cam0'
+  sample_rate: 24
+  show_images: false
+
+models:
+  gpt_models:
+    vlm_models:
+      - "gpt-5"
+    lm_models:
+      - "gpt-5"
+    endpoints:
+      - "open_ai"
+
+  gemini_models:
+    vlm_models:
+      - "gemini-2.5-pro"
+    lm_models:
+      - "gemma3:12b"
+    endpoints:
+      - "openapi"
+
+  anthropic_models:
+    vlm_models:
+      - "claude-opus-4-1-20250805"
+    lm_models: []
+    endpoints:
+      - "anthropic"
+
+experiments:
+  # Describes the foundation model pipelines to be tested.
+  pipelines:
+    - ["vlm"]
+    # - ["vlm", "lm"]
+    # - ["yolo", "lm"]
+  log: "log.txt"
+  inc_task: true
+  iter: 5
+  build_world_map: true
+  date_override:
