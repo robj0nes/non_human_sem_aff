@@ -7,8 +7,11 @@
 /build
 
 /GroundingDINO
+
 /datasets/*
 !datasets/.gitkeep
 /evaluations/*
 !evaluations/.gitkeep
+/experiments/*
+!experiments/.gitkeep
 keys.json
