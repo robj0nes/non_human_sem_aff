@@ -12,6 +12,10 @@ authors = [
 ]
 keywords = ["robotics", "affordance", "mapping"]
 
+dependencies = [
+    "groundingdino @ git+https://github.com/IDEA-Research/GroundingDINO.git"
+]
+
 [tool.pip-requirements]
 file = "requirements.txt"
 
