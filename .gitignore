@@ -4,6 +4,11 @@
 
 *.pt
 *.pkl
+/build
+
 /GroundingDINO
-/datasets
+/datasets/*
+!datasets/.gitkeep
+/evaluations/*
+!evaluations/.gitkeep
 keys.json

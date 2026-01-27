@@ -1,5 +1,5 @@
 [build-system]
-requires = ["setuptools", "wheel"]
+requires = ["setuptools", "wheel", "torch", "torchvision"]
 build-backend = "setuptools.build_meta"
 
 [project]
@@ -12,12 +12,11 @@ authors = [
 ]
 keywords = ["robotics", "affordance", "mapping"]
 
-dependencies = [
-    "groundingdino @ git+https://github.com/IDEA-Research/GroundingDINO.git"
-]
+dynamic = ["dependencies"]
 
-[tool.pip-requirements]
-file = "requirements.txt"
+[tool.setuptools.dynamic]
+dependencies = {file = ["requirements.txt"]}
 
 [tool.setuptools.packages.find]
-where = ["src"]
+where = ["."]
+include = ["affordance_mapping*"]

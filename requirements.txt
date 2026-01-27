@@ -9,9 +9,6 @@ seaborn
 supervision
 matplotlib
 sentence_transformers
-groundingdino-py
-torch
-torchvision
 httpx
 anthropic
 google-genai
