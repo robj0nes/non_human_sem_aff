@@ -22,7 +22,7 @@ from models.foundation_model import (
 from models.anthropic import Claude
 from models.gemini import Gemini
 from models.openai import GPT
-from utils import load_config, load_dino_model, Log
+from affordance_mapping.utils import load_config, load_dino_model, Log
 
 
 # Constants

@@ -5,11 +5,11 @@ import logging
 
 # local files
 import compute
-from src.utils import load_dino_model
+from affordance_mapping.utils import load_dino_model
 from utils import load_pickle, save_pickle, load_config
 
 from pathlib import Path
-from typing import Dict, Any, Optional, Union
+from typing import Dict, Any, Optional
 
 # Optional import if debugging.
 from groundingdino.util.inference import load_model
