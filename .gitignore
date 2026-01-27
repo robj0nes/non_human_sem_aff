@@ -14,4 +14,6 @@
 !evaluations/.gitkeep
 /experiments/*
 !experiments/.gitkeep
+/logs/*
+!logs/.gitkeep
 keys.json
